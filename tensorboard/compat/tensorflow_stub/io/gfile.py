@@ -154,7 +154,7 @@ class LocalFileSystem:
             file_content: string, the contents
             binary_mode: bool, write as binary if True, otherwise text
         """
-        self._write(filename, file_content, "wb" if binary_mode else "w")
+        self._write(filename, file_content, "ab" if binary_mode else "a")
 
     def append(self, filename, file_content, binary_mode=False):
         """Append string file contents to a file.
@@ -556,7 +556,7 @@ class FSSpecFileSystem:
             file_content: string, the contents
             binary_mode: bool, write as binary if True, otherwise text
         """
-        self._write(filename, file_content, "wb" if binary_mode else "w")
+        self._write(filename, file_content, "ab" if binary_mode else "w")
 
     @_translate_errors
     def append(self, filename, file_content, binary_mode=False):
